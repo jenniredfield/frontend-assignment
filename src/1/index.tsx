@@ -6,7 +6,16 @@ class Task1 extends React.Component {
     data: ["Item 1", "Item 2", "Item 3", "Item 4", "Item 5"]
   };
   render() {
-    return <div>#List goes here#</div>;
+    const {data} = this.state;
+    return (
+      <div>
+        <ul>
+          {data.map((x, i) => {
+            return <li key={`${x}_${i}`}>{x}</li>
+          })}
+        </ul>
+      </div>
+    );
   }
 }
 
