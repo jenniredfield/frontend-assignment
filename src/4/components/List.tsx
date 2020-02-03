@@ -1,5 +1,4 @@
 import * as React from "react";
-
 // Components
 import Item from "./Item";
 
@@ -14,9 +13,28 @@ import Item from "./Item";
 */
 
 //
-interface IProps {}
-const List: React.SFC<IProps> = props => {
-  return <div>#List goes here#</div>;
+interface IProps {
+  listData: Array<string>,
+  inputValue: string
+}
+
+const List: React.SFC<IProps> = ({listData, inputValue}) => {
+  return <div>
+      <ul>
+      {
+          listData.filter(x => {
+            if (!inputValue) {
+              return true;
+            }
+
+            return inputValue.toLowerCase().substring(0, inputValue.length) === x.toLowerCase().substring(0, inputValue.length);
+          }).map((value, i) => {
+            return (
+              <Item key={`${value}_${i}`} value={value}/>
+            );
+          })}
+      </ul>
+  </div>;
 };
 
 export default List;
