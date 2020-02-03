@@ -1,6 +1,56 @@
-/* DO NOT CHANGE THIS ROOT CLASS NAME*/
-.TASK_5 {
+@gray: #eaeaea;
+@primary-green: rgb(134, 177, 17);
+@secondary-green: rgb(50, 65, 7);
+@text-colour: #333;
 
-    /* Styles goes here */
-    
+.TASK_5 {
+    .form {
+        margin: 0 auto;
+        max-width: 350px;
+        padding: 20px 0;
+
+        .form__row {
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 10px;
+
+            .form__label {
+                font-size: 12px;
+                transition: all 200ms linear;
+                color: @text-colour;
+
+                &--animated {
+                    font-size: 18px;
+                }
+            }
+
+            .form__input {
+                height: 30px;
+                border: none;
+                border-bottom: 2px solid @gray;
+                padding: 5px 5px 0;
+                font-size: 14px;
+
+                &:focus {
+                    outline: none;
+                }
+            }
+        }
+
+        .form__button {
+            background: @primary-green;
+            border-radius: 3px;
+            color: white;
+            border: none;
+            width: 100%;
+            font-size: 14px;
+            margin-top: 20px;
+            padding: 10px;
+
+            &:hover {
+                background: @secondary-green;
+                cursor: pointer;
+            }
+        }
+    }
 }
