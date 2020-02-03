@@ -20,18 +20,20 @@ class Task3 extends React.Component {
         <input onChange={this.handleChange} />
         <br />
         <br />
-        {
-          data.filter(x => {
-            if (!inputValue) {
-              return true;
-            }
+        <ul>
+          {
+            data.filter(x => {
+              if (!inputValue) {
+                return true;
+              }
 
-            return inputValue.toLowerCase().substring(0, inputValue.length) === x.toLowerCase().substring(0, inputValue.length);
-          }).map((value, i) => {
-            return (
-              <li key={`${value}_${i}`}>{value}</li>
-            );
-          })}
+              return inputValue.toLowerCase().substring(0, inputValue.length) === x.toLowerCase().substring(0, inputValue.length);
+            }).map((value, i) => {
+              return (
+                <li key={`${value}_${i}`}>{value}</li>
+              );
+            })}
+        </ul>
       </div>
     );
   }
